@@ -1,0 +1,1 @@
+After doing all the project what we have implmnted how we do feature enginnering and eda task and how we get the eveluation score why what doing all the above will be wrtten by this files

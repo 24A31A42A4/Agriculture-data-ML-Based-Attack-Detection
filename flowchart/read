@@ -1,0 +1,1 @@
+The flowchart folder contains architecture and workflow diagrams of each ML pipeline component such as data ingestion, validation, transformation, model training, evaluation, deployment, and prediction. These diagrams are used for documentation, project understanding, presentations, and explaining the end-to-end workflow.
