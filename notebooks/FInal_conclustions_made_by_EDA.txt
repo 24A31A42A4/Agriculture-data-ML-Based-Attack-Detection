@@ -1,0 +1,319 @@
+
+Conclustions made by EDA: 
+
+Basic Understanding : 
+
+From Above functions we can conclude that we have (172800 rows , 16 columns )  and the where categorical 5 and numerical 11
+
+Timestamp and WaterPumpToTank and WaterPumpFromTank and Light and Class are string type 
+
+WaterLevel , Tds , AirQuality are int type
+
+WaterTemperature, Ec, LightIntensity, Humidity, Temperature, HeatIndex, SoilHumidity1, SoilHumidity2 are float type
+
+Timestamp: Time when the sensor reading was recorded.
+
+WaterLevel: Amount of water in the tank.
+
+WaterPumpToTank: Status of the pump filling the tank.
+
+WaterPumpFromTank: Status of the pump supplying water to plants.
+
+WaterTemperature: Temperature of the water in the tank.
+
+EC (Electrical Conductivity): Measure of nutrient concentration in water.
+
+TDS (Total Dissolved Solids): Total dissolved minerals and salts in water.
+
+LightIntensity: Amount of light reaching the system.
+
+Humidity: Moisture level in the air.
+
+Temperature: Surrounding air temperature.
+
+HeatIndex: Feels-like temperature based on heat and humidity.
+
+AirQuality: Level of air cleanliness or pollution.
+
+SoilHumidity1: Moisture level in soil zone 1.
+
+SoilHumidity2: Moisture level in soil zone 2.
+
+Light: Status of the grow lights.
+
+
+Conclustion of sttsistical measures : 
+
+The dataset contains 172,800 records for all numerical features, indicating that there are no missing values in these columns. This provides a complete dataset for further analysis and model development.
+
+The WaterLevel feature has an average value of 12.48, while the median is 9, suggesting that water levels are generally concentrated at lower values and the distribution is slightly positively skewed. Most water level readings fall between 9 and 20 units.
+
+The WaterTemperature feature has an average of 27.32°C with a low standard deviation of 1.37, indicating that water temperature remains relatively stable. However, the minimum value of 0°C appears unrealistic for a smart agriculture environment and may represent sensor errors or invalid readings.
+
+The Electrical Conductivity (EC) feature has an average value of 741.21 and shows moderate variability. The minimum value of 0 is suspicious because EC should normally be greater than zero in nutrient-rich water, suggesting possible sensor or data collection issues.
+
+The Total Dissolved Solids (TDS) feature has an average of 276.68 with a maximum value of 883, which is considerably higher than the upper quartile value of 312. This indicates the presence of potential outliers or sudden increases in dissolved mineral concentration.
+
+The LightIntensity feature exhibits the highest variability among all features, with a standard deviation of 348.80 and values ranging from 11.10 to 1721.67. This large variation likely reflects changing environmental conditions such as day-night cycles and sunlight fluctuations, making it an important feature for predictive modeling.
+
+The Humidity feature has an average value of 62.12% and a relatively low standard deviation of 5.03, indicating that humidity levels remain fairly stable throughout the observation period.
+
+The Temperature feature has an average of 28.53°C and shows low variability. Similar to WaterTemperature, the minimum value of 0°C appears unrealistic and should be investigated as a possible data quality issue.
+
+The HeatIndex feature has an average value of 24.07 and generally remains stable. However, the minimum value of 2.2 is unusually low and may represent anomalous observations.
+
+The AirQuality feature has an average value of 457.36 and moderate variability. The distribution appears relatively stable with no obvious indication of extreme outliers.
+
+The SoilHumidity1 feature has an average value of 14.71 and a standard deviation of 6.60, indicating substantial variation in soil moisture levels. This suggests that irrigation and water availability vary over time.
+
+The SoilHumidity2 feature has an average value of 16.95 and a standard deviation of 7.56, showing even greater variability than SoilHumidity1. This suggests differences in moisture conditions across sensor locations and may provide useful information for irrigation management.
+
+Distribution Analysis Conclusions
+WaterLevel
+
+The WaterLevel feature is moderately positively skewed (Skewness = 0.77). Most observations are concentrated around water levels of 9 and 20, while very few readings occur at extreme values. This indicates that the tank generally operates within a limited set of water levels.
+
+WaterTemperature
+
+The WaterTemperature feature is highly positively skewed (Skewness = 3.61). Most readings lie between 26°C and 30°C, but a small number of extreme values, including 0°C and 44°C, create a long right tail. These values should be investigated as possible sensor anomalies.
+
+EC (Electrical Conductivity)
+
+The EC feature is moderately positively skewed (Skewness = 0.74). Most observations fall within 650–900, indicating relatively stable nutrient concentrations. However, the presence of zero values suggests potential sensor or data collection errors.
+
+TDS
+
+The TDS feature is extremely positively skewed (Skewness = 7.83). Most observations are concentrated between 250 and 350, while a few values extend to 883. This suggests significant outliers or unusual nutrient concentration events.
+
+🚩 Strong outlier presence detected.
+
+LightIntensity
+
+The LightIntensity feature is slightly positively skewed (Skewness = 0.51). The distribution shows multiple peaks, indicating different lighting conditions such as low light, moderate light, and high light periods. This suggests cyclical environmental behavior and makes LightIntensity an important predictive feature.
+
+Humidity
+
+The Humidity feature is approximately symmetric (Skewness = 0.36). Most observations are concentrated between 58% and 70%, indicating stable environmental humidity conditions. No major distributional issues are observed.
+
+✅ Near-normal distribution.
+
+Temperature
+
+The Temperature feature exhibits extreme negative skewness (Skewness = -12.43). Almost all observations are concentrated between 27°C and 30°C, while a small number of zero values create a long left tail.
+
+🚩 This strongly suggests invalid sensor readings or erroneous data entries.
+
+HeatIndex
+
+The HeatIndex feature is highly negatively skewed (Skewness = -4.57). Most observations are concentrated around 22–25, but a few unusually low values create a substantial left tail.
+
+🚩 Potential anomalies or measurement errors exist.
+
+AirQuality
+
+The AirQuality feature is positively skewed (Skewness = 1.04). Most values are concentrated between 400 and 500, while a smaller number of higher readings extend the distribution toward 640. This indicates occasional periods of reduced air quality.
+
+SoilHumidity1
+
+The SoilHumidity1 feature is moderately positively skewed (Skewness = 0.79). The histogram shows two distinct peaks around 10–12 and 23–25, suggesting two different moisture states in the monitored area.
+
+✅ Possible bimodal distribution.
+
+SoilHumidity2
+
+The SoilHumidity2 feature is highly positively skewed (Skewness = 1.14). Similar to SoilHumidity1, the distribution exhibits two clusters, indicating varying moisture conditions across different sensor locations or irrigation cycles.
+
+✅ Possible bimodal distribution with high variability.
+
+
+by observing the above box plot water temperature and ec, tds , temperature , head index ,and majorly airquality ahs so many outliers  and soil humidity 2 has major outliers 
+
+
+
+
+
+The IQR analysis reveals that WaterTemperature, EC, TDS, Temperature, HeatIndex, AirQuality, and SoilHumidity2 contain outliers. Among these, Temperature, WaterTemperature, EC, and TDS exhibit suspicious zero values that may indicate sensor malfunctions, missing-value encoding, or data recording errors. In contrast, WaterLevel, LightIntensity, Humidity, and SoilHumidity1 do not contain significant outliers and appear to be well-behaved features. Before building machine learning models, the identified outliers should be validated, corrected, removed, or treated using robust preprocessing techniques.
+
+
+WaterLevel
+Outliers: 0
+Percentage: 0.0
+WaterTemperature
+Outliers: 574
+Percentage: 0.33217592592592593
+Ec
+Outliers: 16
+Percentage: 0.009259259259259259
+Tds
+Outliers: 697
+Percentage: 0.40335648148148145
+LightIntensity
+Outliers: 0
+Percentage: 0.0
+Humidity
+Outliers: 0
+Percentage: 0.0
+Temperature
+Outliers: 332
+Percentage: 0.19212962962962965
+HeatIndex
+Outliers: 1395
+Percentage: 0.8072916666666667
+AirQuality
+Outliers: 10316
+Percentage: 5.969907407407407
+SoilHumidity1
+Outliers: 0
+Percentage: 0.0
+SoilHumidity2
+Outliers: 769
+Percentage: 0.44502314814814814
+
+
+interquartile Range (IQR) of WaterLevel: 11.0
+lower Bound of WaterLevel: -7.5
+upper Bound of WaterLevel: 36.5
+interquartile Range (IQR) of WaterTemperature: 1.120000000000001
+lower Bound of WaterTemperature: 24.949999999999996
+upper Bound of WaterTemperature: 29.43
+interquartile Range (IQR) of Ec: 176.36
+lower Bound of Ec: 407.34
+upper Bound of Ec: 1112.78
+interquartile Range (IQR) of Tds: 62.0
+lower Bound of Tds: 157.0
+upper Bound of Tds: 405.0
+interquartile Range (IQR) of LightIntensity: 630.0
+lower Bound of LightIntensity: -685.8299999999999
+upper Bound of LightIntensity: 1834.17
+interquartile Range (IQR) of Humidity: 9.399999999999999
+lower Bound of Humidity: 44.5
+upper Bound of Humidity: 82.1
+interquartile Range (IQR) of Temperature: 0.8999999999999986
+lower Bound of Temperature: 26.750000000000004
+upper Bound of Temperature: 30.349999999999998
+interquartile Range (IQR) of HeatIndex: 1.3999999999999986
+lower Bound of HeatIndex: 21.360000000000003
+upper Bound of HeatIndex: 26.959999999999997
+interquartile Range (IQR) of AirQuality: 61.0
+lower Bound of AirQuality: 326.5
+upper Bound of AirQuality: 570.5
+interquartile Range (IQR) of SoilHumidity1: 13.56
+lower Bound of SoilHumidity1: -10.44
+upper Bound of SoilHumidity1: 43.8
+interquartile Range (IQR) of SoilHumidity2: 13.09
+lower Bound of SoilHumidity2: -7.704999999999998
+upper Bound of SoilHumidity2: 44.655
+
+Class Distribution Analysis: The target variable is imbalanced, with the Normal class accounting for 90.42% of observations and the Attack class representing only 9.58%. This corresponds to an approximate class ratio of 9.4:1. Such imbalance may bias machine learning models toward the majority class, leading to poor attack detection performance. Therefore, evaluation should emphasize Precision, Recall, F1-score, and ROC-AUC rather than relying solely on accuracy.
+
+
+Conclustion about this correlation : 
+
+Correlation analysis demonstrated strong positive relationships among the irrigation, nutrient, and soil moisture parameters. The strongest correlation was observed between SoilHumidity1 and SoilHumidity2 (r = 0.958), indicating highly similar moisture measurements across sensor locations. WaterLevel exhibited strong positive correlations with EC (r = 0.929), SoilHumidity1 (r = 0.923), and SoilHumidity2 (r = 0.871), suggesting that water availability plays a crucial role in maintaining soil moisture and nutrient concentration. These findings confirm the interconnected nature of water management and soil conditions in the smart agriculture system and provide valuable insights for feature selection and predictive modeling.
+
+
+number of unique values (nunique of all columns ) : 
+Timestamp            172800
+WaterLevel               19
+WaterPumpToTank           2
+WaterPumpFromTank         2
+WaterTemperature         52
+Ec                       37
+Tds                      38
+LightIntensity         1949
+Humidity                199
+Temperature              36
+HeatIndex               294
+AirQuality              297
+SoilHumidity1           290
+SoilHumidity2           436
+Light                     2
+Class                     2
+dtype: int64
+
+var : 
+WaterLevel              27.041939
+WaterTemperature         1.873981
+Ec                    7338.759353
+Tds                   2362.914123
+LightIntensity      121659.835538
+Humidity                25.321356
+Temperature              1.929563
+HeatIndex                1.804993
+AirQuality            3250.260390
+SoilHumidity1           43.571343
+SoilHumidity2           57.081438
+dtype: float64
+
+kurtosis : 
+WaterLevel           -1.226203
+WaterTemperature    103.724745
+Ec                   -0.614030
+Tds                  93.406144
+LightIntensity       -0.271128
+Humidity             -1.095421
+Temperature         232.565327
+HeatIndex            88.733521
+AirQuality            0.462888
+SoilHumidity1        -1.182413
+SoilHumidity2         0.394445
+dtype: float64
+
+no of unique values nunique of categorical columns
+WaterPumpToTank      2
+WaterPumpFromTank    2
+Light                2
+Class                2
+dtype: int64
+
+
+Univariate Analysis of Categorical Features
+
+The categorical feature analysis reveals that most operational states in the smart agriculture system are highly imbalanced.
+
+WaterPumpToTank
+
+The WaterPumpToTank feature is predominantly in the Inactive state, with 168,471 observations (97.49%), while the Active state occurs only 4,329 times (2.51%).
+
+Conclusion:
+The pump responsible for filling the tank remains inactive for most of the monitoring period, indicating that tank refilling is an infrequent event.
+
+WaterPumpFromTank
+
+The WaterPumpFromTank feature is also heavily dominated by the Inactive state, with 171,046 observations (98.98%), compared to only 1,754 Active observations (1.02%).
+
+Conclusion:
+The irrigation pump is active only occasionally, suggesting that water distribution events occur during specific periods rather than continuously.
+
+Light
+
+The Light feature shows a relatively balanced distribution compared to the pump features, with 95,881 observations (55.49%) in the Off state and 76,919 observations (44.51%) in the On state.
+
+Conclusion:
+The artificial lighting system alternates regularly between ON and OFF states, reflecting normal operational cycles in the agricultural environment.
+
+Class (Target Variable)
+
+The target variable consists of 156,252 Normal observations (90.42%) and 16,548 Attack observations (9.58%).
+
+Conclusion:
+The dataset exhibits a noticeable class imbalance, with Normal events significantly outnumbering Attack events. This imbalance may bias machine learning models toward the majority class and should be considered during model evaluation and training.
+
+Overall Conclusion
+
+The categorical analysis indicates that both water pump systems operate only during limited periods, resulting in highly imbalanced operational states. The lighting system exhibits a more balanced distribution, suggesting regular switching behavior. The target variable is moderately imbalanced, with approximately 90% Normal and 10% Attack instances. These findings suggest that categorical features should be carefully evaluated for predictive relevance, and appropriate techniques such as class weighting or imbalance-aware evaluation metrics should be used during model development.
+
+Research-Level Observation
+
+The extreme imbalance in:
+
+WaterPumpToTank (97.49% Inactive)
+WaterPumpFromTank (98.98% Inactive)
+
+raises an important question:
+
+Are pump activation events associated with attack occurrences?
+
+
+
+

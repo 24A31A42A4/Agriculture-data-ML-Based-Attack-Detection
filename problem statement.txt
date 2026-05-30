@@ -400,3 +400,12 @@ ROC Curve
 Precision-Recall Curve
 Confusion Matrix Heatmap
 Learning Curve
+
+
+
+
+
+
+
+
+EDA helps us understand the dataset and discover hidden patterns, relationships, data quality issues, missing values, outliers, class imbalance, and feature distributions. Based on the insights obtained from EDA, we decide what preprocessing steps are required. For example, if EDA shows outliers, we may remove or treat them. If features are on different scales, we may apply scaling. If there are missing values, we handle them. Therefore, EDA acts as a verification and decision-making phase that helps us determine the next steps before performing feature engineering and model building.
