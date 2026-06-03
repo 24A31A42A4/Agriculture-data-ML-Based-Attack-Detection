@@ -1,0 +1,3 @@
+# This directory stores AES-256-encrypted ECC private keys.
+# Files are auto-generated during device registration.
+# NEVER commit actual key files to version control.

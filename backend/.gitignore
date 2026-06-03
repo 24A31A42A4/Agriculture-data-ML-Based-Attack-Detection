@@ -1,0 +1,42 @@
+# ── Environment secrets ──
+.env
+*.env.local
+
+# ── Python ──
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environments ──
+.venv/
+venv/
+env/
+
+# ── Key vault contents (NEVER commit private keys) ──
+key_vault/**/*.key.enc
+!key_vault/.gitkeep
+
+# ── ML model binaries (large files) ──
+app/ml/models/*.pkl
+
+# ── IDE ──
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Testing ──
+.coverage
+htmlcov/
+.pytest_cache/
+
+# ── Docker ──
+docker/data/
+
+# ── OS ──
+.DS_Store
+Thumbs.db
