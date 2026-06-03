@@ -1,13 +1,66 @@
-# Jupyter
-.ipynb_checkpoints/
-
-# Python
+# Python / Backend
 __pycache__/
-*.pyc
-
-# Local environment files
-.venv/
-venv/
+*.py[cod]
+*$py.class
+*.so
+.Python
 env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Notebook outputs can be regenerated
+# Virtual environments
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Node.js / React (Frontend)
+node_modules/
+dist/
+build/
+.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Database files
+*.sqlite3
+*.db
+agri_security.db
+
+# Machine Learning artifacts
+*.pkl
+*.model
+*.h5
+*.joblib
